@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovilTarea2.View.ListContenido"
+             Background="#E2E2E2">
+    <ContentPage.Content>
+        <!--ItemTapped="ListaPagos_ItemTapped"-->
+        <ListView x:Name="ListaEmpleado" Margin="2" 
+                      HasUnevenRows="true"
+                  ItemsSource="{Binding ListaEmpleado}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout x:Name="Item">
+
+                            <Frame 
+                                CornerRadius="25"
+                                HasShadow="False"
+                                Margin="10,5">
+
+                                <!--x:DataType="model:ListVehicles"-->
+
+
+                                <!-- Place description-->
+                                <StackLayout>
+                                    <!---->
+                                    <Label  Text="Nombre Completo: " 
+                                               FontAttributes="Bold"
+                                               TextColor="Black" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+                                    
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Nombre}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#535257" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+
+                                        <Label Text="{Binding Apellido}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#535257" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <Label  Text="Edad: " 
+                                               FontAttributes="Bold"
+                                               TextColor="Black" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+
+                                        <Label Text="{Binding Edad}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#535257" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <Label  Text="Puesto: " 
+                                               FontAttributes="Bold"
+                                               TextColor="Black" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+
+                                        <Label Text="{Binding Puesto}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#535257" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+                                    </StackLayout>
+                                    
+                                    <StackLayout Orientation="Horizontal">
+
+                                        <Label  Text="Direccion: " 
+                                               FontAttributes="Bold"
+                                               TextColor="Black" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+
+                                        <Label Text="{Binding Direccion}" 
+                                               FontAttributes="Bold"
+                                               TextColor="#535257" 
+                                               FontFamily="SansBold"
+                                               FontSize="18" />
+                                    </StackLayout>
+                                    <Button 
+                                 Text="Eliminar" 
+                                  BindingContext="{Binding Source={x:Reference ListaEmpleado}, Path=BindingContext}" 
+                                Command="{Binding DeleteServiceCommand}" 
+                                CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}" 
+                                 TextColor="white"
+                                 CornerRadius="05"
+                                 BackgroundColor="#D58080"
+                                    />
+                                    <!--<Button 
+                       Text="Actualizar" 
+                       TextColor="white"
+                       CommandParameter="{Binding .}"
+                       CornerRadius="05"
+                       BackgroundColor="#01ADBA"/>-->
+
+                                   
+                                </StackLayout>
+
+                            </Frame>
+                        </StackLayout>
+                      </ViewCell>
+                </DataTemplate>
+                    
+            </ListView.ItemTemplate>
+           
+        </ListView>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

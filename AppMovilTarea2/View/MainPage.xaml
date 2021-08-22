@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovilTarea2.MainPage"
+             Title="Tarea Blanca Sarahi Osorto Mendez">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista"
+                     Clicked="list_Clicked"                 
+                     Order="Secondary"
+                     Priority="1" />
+        
+    </ContentPage.ToolbarItems>
+
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="DsStackLayout" TargetType="StackLayout">
+                <Setter Property="Margin" Value="20,5"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="DsFrames" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="7"/>
+                <Setter Property="WidthRequest" Value="340"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="DsButtonFlotante" TargetType="Button">
+                
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="BorderColor" Value="#01ADBA"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="CornerRadius" Value="40"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="60"/>
+            </Style>
+
+            <Style x:Key="DsEntry" TargetType="Entry">
+                <Setter Property="Margin" Value="25,5"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="black"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        
+        <ScrollView>
+            <StackLayout
+                        Style="{StaticResource DsStackLayout}">
+
+                <Label 
+                            Text="Ingrese Nombre: "
+                            FontSize="20"
+                            TextColor="Black"
+                            FontFamily="SansBold"/>
+                <!-- ENTRY DESCRIPCION -->
+                <Frame Style="{StaticResource DsFrames}">
+                    <Entry  Style="{StaticResource DsEntry}"
+                        Keyboard="Plain"
+                        Text="{Binding Nombre, Mode=TwoWay}"
+                        PlaceholderColor="Gray" 
+                         />
+                </Frame>
+
+                <Label 
+                            Text="Ingrese Apellido: "
+                            FontSize="20"
+                            TextColor="Black"
+                            FontFamily="SansBold"/>
+                <!-- ENTRY Apellido -->
+                <Frame Style="{StaticResource DsFrames}">
+                    <Entry  Style="{StaticResource DsEntry}"
+                        Keyboard="Plain"
+                        Text="{Binding Apellido, Mode=TwoWay}"
+                        PlaceholderColor="Gray" 
+                         />
+                </Frame>
+
+                <Label 
+                            Text="Ingrese Edad: "
+                            FontSize="20"
+                            TextColor="Black"
+                            FontFamily="SansBold"/>
+                <!-- ENTRY Edad -->
+                <Frame Style="{StaticResource DsFrames}">
+                    <Entry  Style="{StaticResource DsEntry}"
+                        Keyboard="Numeric"
+                        Text="{Binding Edad, Mode=TwoWay}"
+                        PlaceholderColor="Gray" 
+                         />
+                </Frame>
+
+                <Label 
+                            Text="Ingrese Direccion: "
+                            FontSize="20"
+                            TextColor="Black"
+                            FontFamily="SansBold"/>
+                <!-- ENTRY Direccion -->
+                <Frame Style="{StaticResource DsFrames}">
+                    <Entry  Style="{StaticResource DsEntry}"
+                        Keyboard="Plain"
+                        Text="{Binding Direccion, Mode=TwoWay}"
+                        PlaceholderColor="Gray" 
+                         />
+                </Frame>
+
+                <Label 
+                            Text="Ingrese Puesto: "
+                            FontSize="20"
+                            TextColor="Black"
+                            FontFamily="SansBold"/>
+                <!-- ENTRY Puesto -->
+                <Frame Style="{StaticResource DsFrames}">
+                    <Entry  Style="{StaticResource DsEntry}"
+                        Keyboard="Plain"
+                        Text="{Binding Puesto, Mode=TwoWay}"
+                        PlaceholderColor="Gray" 
+                         />
+                </Frame>
+
+               
+
+            </StackLayout>
+
+        </ScrollView>
+        <!--<Grid 
+                HeightRequest="80">-->
+            <Button Text="Guardar" 
+                        Command="{Binding SaveInformation}"
+                        BackgroundColor="#2EBE79"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="0"/>
+
+            <Button Text="Limpiar" 
+                        Command="{Binding ClearCommand}"
+                        BackgroundColor="#E3E4E5"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="1"/>
+        <!--</Grid>-->
+    </StackLayout>
+
+</ContentPage>
